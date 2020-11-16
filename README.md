@@ -22,3 +22,9 @@ Combine the following data sources into a final frame
 | Daily close price / vol   | [x]          | [x]     | [x]     |
 | Categories                | [ ]          | [ ]     | [ ]     |
 | Institutional ownership % | [ ]          | [ ]     | [ ]     |
+| Earnings / EPS            | [ ]          | [ ]     | [ ]     |
+| Dividend Yield            | [ ]          | [ ]     | [ ]     |
+| Assets / Liabilities      | [ ]          | [ ]     | [ ]     |
+| Bank debt vs. Funded debt | [ ]          | [ ]     | [ ]     |
+| Cash flow                 | [ ]          | [ ]     | [ ]     |
+| Inventories               | [ ]          | [ ]     | [ ]     |

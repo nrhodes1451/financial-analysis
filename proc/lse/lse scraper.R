@@ -4,14 +4,17 @@ library(readxl)
 library(data.table)
 library(arrow)
 
-scrape_lse <- function(){
-  df_ticker <- read_xlsx("data/raw/lse tickers.xlsx")
+scrape_lse <- function(
+  ticker_list = "data/raw/lse tickers.xlsx",
+  dump_dir = "data/dump/lse/daily-prices/"
+){
+  df_ticker <- read_xlsx(ticker_list)
   tickerlist <- df_ticker$Code
   
   for(ticker in tickerlist){
     message("Fetching data for ", ticker)
     
-    fp <- paste0("data/dump/lse/daily-prices/", ticker, ".csv")
+    fp <- paste0(dump_dir, ticker, ".csv")
     
     if(!file.exists(fp)){
       tryCatch({
@@ -20,7 +23,7 @@ scrape_lse <- function(){
                          to = "2020-12-31",
                          auto.assign = FALSE) %>% 
           as_tibble(rownames="date")
-        df %>% write_csv(paste0("data/dump/lse/daily-prices/", ticker, ".csv"))
+        df %>% write_csv(fp)
       }, error=function(e){})
     }
     else{
@@ -28,21 +31,3 @@ scrape_lse <- function(){
     }
   }
 }
-
-merge_lse_dump <- function(){
-  fp <- "data/dump/lse/daily-prices"
-  dflist <- list.files(fp) %>% 
-    lapply(function(f){
-      df <- read_csv(file.path(fp, f))
-      ticker <- f %>% str_remove_all(".csv")
-      names(df) <- str_remove_all(names(df), "^.*\\.")
-      df %>% pivot_longer(-date, names_to="metric") %>% 
-        mutate(name = ticker) %>% 
-        select(name, date, metric, value)
-    })
-  dflist <- dflist[lapply(dflist, nrow) > 0]
-  df <- rbindlist(dflist)
-  df %>% write_feather("data/proc/lse/close.feather")
-}
-
-s

@@ -16,9 +16,9 @@ Low
 
 Combine the following data sources into a final frame
 
-Metric                    | Source Found | Scraped | Cleaned
------- ------------------ | ------------ | ------- | -------
-Tickers                   | [x]          | [x]     | [x]
-Daily close price / vol   | [x]          | [x]     | [x]
-Categories                | [ ]          | [ ]     | [ ]
-Institutional ownership % | [ ]          | [ ]     | [ ]
+| Metric                    | Source Found | Scraped | Cleaned |
+| -------------------------:| ------------:| -------:| -------:|
+| Tickers                   | [x]          | [x]     | [x]     |
+| Daily close price / vol   | [x]          | [x]     | [x]     |
+| Categories                | [ ]          | [ ]     | [ ]     |
+| Institutional ownership % | [ ]          | [ ]     | [ ]     |

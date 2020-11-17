@@ -20,7 +20,7 @@ Combine the following data sources into a final frame
 | -------------------------:| ------------:| -------:| -------:|
 | Tickers                   | [x]          | [x]     | [x]     |
 | Daily close price / vol   | [x]          | [x]     | [x]     |
-| Categories                | [ ]          | [ ]     | [ ]     |
+| Categories                | [x]          | [x]     | [ ]     |
 | Institutional ownership % | [ ]          | [ ]     | [ ]     |
 | Earnings / EPS            | [ ]          | [ ]     | [ ]     |
 | Dividend Yield            | [ ]          | [ ]     | [ ]     |

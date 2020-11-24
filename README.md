@@ -21,10 +21,10 @@ Combine the following data sources into a final frame
 | Tickers                   | [x]          | [x]     | [x]     |
 | Daily close price / vol   | [x]          | [x]     | [x]     |
 | Categories                | [x]          | [x]     | [ ]     |
+| Earnings / EPS            | [x]          | [x]     | [x]     |
+| Dividend Yield            | [x]          | [x]     | [x]     |
+| Assets / Liabilities      | [x]          | [x]     | [x]     |
 | Institutional ownership % | [ ]          | [ ]     | [ ]     |
-| Earnings / EPS            | [ ]          | [ ]     | [ ]     |
-| Dividend Yield            | [ ]          | [ ]     | [ ]     |
-| Assets / Liabilities      | [ ]          | [ ]     | [ ]     |
 | Bank debt vs. Funded debt | [ ]          | [ ]     | [ ]     |
 | Cash flow                 | [ ]          | [ ]     | [ ]     |
 | Inventories               | [ ]          | [ ]     | [ ]     |

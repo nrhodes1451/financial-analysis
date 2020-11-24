@@ -52,9 +52,11 @@ scrape_fundamentals <- function(ticker,
 
 scrape_all <- function(){
   ticker_list <- combine_listings() %>% 
-    filter(key=="issuername") %>% 
+    filter(key=="issuername") %>%
+    arrange(code) %>% 
     mutate(name = str_replace_all(tolower(value), " ", "-")) %>% 
-    mutate(name = str_remove_all(name, "\""))
+    mutate(name = str_remove_all(name, "[\"\\(\\)&/]")) %>% 
+    mutate(name = str_replace_all(name, "-+", "-"))
   
   for(i in seq(nrow(ticker_list))){
     ticker <- ticker_list$code[i]

@@ -41,7 +41,10 @@ scrape_listings <- function(pages=112){
 }
 
 combine_listings <- function(){
-  list.files("data/dump/lse/listings") %>% 
+  df_listings <- list.files("data/dump/lse/listings") %>% 
     lapply(function(f){read_csv(file.path("data/dump/lse/listings", f))}) %>% 
     do.call(what=rbind)
+  df_listings %>%
+    pivot_wider(names_from=key, values_from=value) %>% 
+    write_csv("data/proc/lse/listings.csv")
 }
